@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <style>
+    body,h1 {font-family: "Raleway", sans-serif}
+    body, html {height: 100%}
+
+    body {margin: 0;}
+    
+    ul.topnav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    ul.topnav li {float: left;}
+    
+    ul.topnav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    ul.topnav li a:hover:not(.active) {background-color: #111;}
+    
+    ul.topnav li a.active {background-color: #04AA6D;}
+    
+    ul.topnav li.right {float: right;}
+    
+    @media screen and (max-width: 600px) {
+      ul.topnav li.right, 
+      ul.topnav li {float: none;}
+    }
+    </style>
+
+
+  <meta charset="utf-8">
+  <title>REMBAT ASAL</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <ul class="topnav">
+    <li><a class="active" href="/home">Home</a></li>
+    <li><a href="/angularhome">Angular</a></li>
+    <li><a href="/dashboard">Dashboard</a></li>
+    <li class="right"><a href="/login">Login</a></li>
+  </ul>
+
+  <app-root></app-root>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<p>dashboard works! {{tajukbuku}}</p>
+
+<button type="button" (click)="createBook1()" *ngIf="displayForm===false">Create Bulus</button>
+<div *ngIf="displayForm===true">
+  <input class="form-control" placeholder="title" type="text"   [(ngModel)]="title">
+  <input class="form-control" placeholder="price" type="text"   [(ngModel)]="price">
+  <button type="button" class="btn btn-primary" (click)="validationCreate()">
+    Submit!
+  </button>
+  <button type="button" class="btn btn-primary" (click)="cancelfalse()">
+    Cancel!
+  </button>
+</div>
+
+
+<div *ngIf="hasData === true && infoFetched === true" id='here'>
+  <table id="customers">
+    <thead>
+        <tr>
+          <th>BULUS</th>
+          <th>HARGA</th>
+          <th>edit</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of datab">
+        <td>
+          <div *ngIf="displayFormU===false">{{ user.title }}</div>
+         <div *ngIf="displayFormU===true"><input *ngIf="(selectedHero.bookid===user.bookid)" class="form-control" placeholder="{{ user.title }}" type="text" [(ngModel)]="title2u" size="35"></div>
+        </td>
+        <td><div *ngIf="displayFormU===false">{{ user.price }}</div>
+          <div *ngIf="displayFormU===true"><input *ngIf="(selectedHero.bookid===user.bookid)" class="form-control" placeholder="{{ user.title }}" type="text" [(ngModel)]="price2u" size="35"></div>
+        </td>
+        <td>
+          <button type="button" (click)="onSelect(user)"  *ngIf="displayFormU===false" >Update {{ user.bookid }}</button> 
+          <button type="button" (click)="validationUpdate(user.bookid)" *ngIf="displayFormU===true&&(selectedHero.title===user.title)">Submit!</button>
+          <button type="button" (click)="cancelfalse()" *ngIf="displayFormU===true&&(selectedHero.title===user.title)">Cancel!</button>
+          <button type="button" (click)="validationDelete(user.bookid)" *ngIf="displayFormU===false">Delete {{ user.bookid }}</button></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+<!-- 
+  <button type="button" onclick="f1();">
+    Refresh
+  </button>
+dah takleh guna ng dah migrate cara latest
+  <script>
+    function updateDiv(){ 
+        $("#here").load(window.location.href + " #here" );
+    }
+    function f1(){
+       alert("f1 called");
+    }
+  </script>-->

@@ -1,0 +1,9 @@
+body, html {height: 100%}
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://i.pinimg.com/736x/7f/72/4d/7f724dc0b8aa26716284e6e3cf725f9d--orange-tabby-cats-kitty-cats.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}

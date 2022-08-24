@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large">
+<p>angularhome works!</p>
+<span>{{ title }} is running!</span>
+
+<!-- Next Steps -->
+<h1 *ngIf="infoFetched === true">{{tajukbuku}}</h1>
+<h2>Next Steps {{title}}</h2>
+<p>What do you want to do next with your app?</p>
+
+<input type="hidden" #selection>
+
+<div class="card-container">
+  <button class="card card-small" (click)="selection.value = 'component'" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+    <span>New Component</span>
+  </button>
+
+  <button class="card card-small" (click)="selection.value = 'material'" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+    <span>Angular Material</span>
+  </button>
+
+  <button class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+    <span>Add PWA Support</span>
+  </button>
+
+  <button class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+    <span>Add Dependency</span>
+  </button>
+
+  <button class="card card-small" (click)="selection.value = 'test'" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+    <span>Run and Watch Tests</span>
+  </button>
+
+  <button class="card card-small" (click)="selection.value = 'build'" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+    <span>Build for Production</span>
+  </button>
+</div>
+
+<!-- Terminal -->
+<div class="terminal" [ngSwitch]="selection.value">
+    <pre *ngSwitchDefault>ng generate component xyz</pre>
+    <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
+    <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
+    <pre *ngSwitchCase="'dependency'">ng add _____</pre>
+    <pre *ngSwitchCase="'test'">ng test</pre>
+    <pre *ngSwitchCase="'build'">ng build</pre>
+ </div>
+
+<h1>Angular Router App</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/first-component" routerLinkActive="active" ariaCurrentWhenActive="page">First Component</a></li>
+    <li><a routerLink="/second-component" routerLinkActive="active" ariaCurrentWhenActive="page">Second Component</a></li>
+    <li><a href="home">Logout</a></li>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+</div></div>
